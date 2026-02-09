@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; */
+            overflow: hidden;
+            /* border: solid 2px; */
+            /* border-radius: */
+            background: linear-gradient(to left, mediumaquamarine, pink, mediumturquoise);
+            color: red;
+
+
+        }
+
+        input {
+            /* margin: 3rem; */
+            border-radius: 4rem;
+            padding: 16px;
+            width: 18rem;
+            font-size: 1.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        input:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+
+        .picture {
+            position: absolute;
+            left: 80%;
+            top: 70%;
+        }
+
+        .move {
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: solid 2px gray;
+            border-top-left-radius: 70px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 70px;
+            border-bottom-left-radius: 10px;
+            text-align: center;
+            /* background-image: url('image.jpg'); */
+            padding: 40px 170px 40px 170px;
+            margin: 50px;
+            /* background-color:rgb(163, 161, 161); */
+            background: linear-gradient(to left, mediumturquoise, pink, mediumaquamarine);
+            position: absolute;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 30px 10px 30px;
+            margin-left: 3.5rem;
+            border-radius: 7px;
+            border: none;
+            box-shadow: 0 0 15px black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function login() {
+            if (document.getElementById("userName").value == "") {
+                var user = document.getElementById("name");
+                user.innerHTML = "Enter user name";
+                user.style = "color:red";
+            }
+            if (document.getElementById("adminName").value == "") {
+                var adminname = document.getElementById("admin");
+                adminname.innerHTML = "Enter admin name";
+                adminname.style = "color:red";
+            }
+            if (document.getElementById("adminPassword").value == "") {
+                var adminpassword = document.getElementById("password");
+                adminpassword.innerHTML = "Enter password";
+                adminpassword.style = "color:red";
+            }
+            if (document.getElementById("userName").value != "" && document.getElementById("adminName").value != "" && document.getElementById("adminPassword").value != "") {
+                // var msg = document.getElementById("username").value;
+                // localStorage.setItem('real', msg);
+                window.location.href = "onlinequestion.html";
+                
+            }
+        }
+
+        function check() {
+            if (document.getElementById("userName").value != "") {
+                var user = document.getElementById("name");
+                user.style = "display:none";
+                // var name = document.getElementById("userName").textContent;
+                // alert(name);
+            }
+            if (document.getElementById("adminName").value != "") {
+                var adminname = document.getElementById("admin");
+                adminname.style = "display:none";
+            }
+            if (document.getElementById("adminPassword").value != "") {
+                var adminpassword = document.getElementById("password");
+                adminpassword.style = "display:none";
+            }
+
+        }
+
+    </script>
+
+    <div class="move">
+        <form action="">
+            <h1>LoginForm</h1>
+            <input oninput="check()" type="text" placeholder="Enter user name" id="userName"><br>
+            <label id="name"></label><br>
+            <input oninput="check()" type="text" placeholder="Enter Admin name" id="adminName"><br>
+            <label id="admin"></label><br>
+            <input oninput="check()" type="text" placeholder="Enter Admin Password" id="adminPassword"><br>
+            <label id="password"></label><br>
+            <button onclick="login()" type="button">Login</button>
+        </form>
+    </div>
+    <!-- <img src="projectimage.png" class="picture" height="30%" width="10%" /> -->
+
+</body>
+
+</html>
